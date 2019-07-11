@@ -13,11 +13,11 @@ class GameObject:
 
     def call_updates(self):
         if self.has_component("SpriteRenderer"):
-            self.transform = self._rect = self.sprite.get_rect()
+            self.transform = self._rect = self.get_component("SpriteRenderer").sprite.sprite.get_rect()
         for component in self.components:
-            component.update()
-        self.update()
-        self.late_update()
+            component.update(self.game_manager.screen)
+        self.update(self)
+        self.late_update(self)
 
     def add_component(self, component):
         if not isinstance(component, BaseComponent):
@@ -34,14 +34,17 @@ class GameObject:
         else:
             return False
 
-    def awake(self):
+    def has_component(self, component_type):
+        return component_type in [c.type for c in self.components]
+
+    def awake(self, *args):
         pass
 
-    def update(self):
+    def update(self, *args):
         pass
 
-    def fixed_update(self):
+    def fixed_update(self, *args):
         pass
 
-    def late_update(self):
+    def late_update(self, *args):
         pass

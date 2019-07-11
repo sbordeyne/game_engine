@@ -1,4 +1,4 @@
-from .BaseCompoenent import BaseComponent
+from .BaseComponent import BaseComponent
 from engine.subsystems.sprite import Sprite
 
 class SpriteRenderer(BaseComponent):

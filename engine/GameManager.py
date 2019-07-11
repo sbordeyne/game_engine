@@ -18,12 +18,16 @@ class GameManager:
 
     def start(self):
         for go in self.game_objects:
-            go.awake()
+            go.awake(go)
         self.loop()
 
     def loop(self):
         while not self.done:
+            if self.input.get_quit():
+                self.done = False
             # self.physics_engine.iterate(self)
-            self.renderer.render(self)
+            self.renderer.render()
+            for go in self.game_objects:
+                go.call_updates()
 
         sys.exit(1)
