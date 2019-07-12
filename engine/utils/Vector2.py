@@ -4,29 +4,64 @@ class Vector2(object):
 
     @classmethod
     def zero(cls):
+        """
+            classmethod of the Vector2 class.
+
+            Returns an instance of this class with x, y values equal to 0, 0
+        """
         return Vector2(0, 0)
 
     @classmethod
     def one(cls):
+        """
+            classmethod of the Vector2 class.
+
+            Returns an instance of this class with x, y values equal to 1, 1
+        """
         return Vector2(1, 1)
 
     @classmethod
     def left(cls):
+        """
+            classmethod of the Vector2 class.
+
+            Returns an instance of this class with x, y values equal to -1, 0
+        """
         return Vector2(-1, 0)
 
     @classmethod
     def up(cls):
+        """
+            classmethod of the Vector2 class.
+
+            Returns an instance of this class with x, y values equal to 0, 1
+        """
         return Vector2(0, 1)
 
     @classmethod
     def right(cls):
+        """
+            classmethod of the Vector2 class.
+
+            Returns an instance of this class with x, y values equal to 1, 0
+        """
         return Vector2(1, 0)
 
     @classmethod
     def down(cls):
+        """
+            classmethod of the Vector2 class.
+
+            Returns an instance of this class with x, y values equal to 0, -1
+        """
         return Vector2(0, -1)
 
     def __init__(self, *args):
+        """
+            Constructor of the Vector2 class. Takes in either a tuple of size 2
+            or 2 positionnal arguments : x and y
+
+        """
         if isinstance(args[0], tuple):
             self.x = args[0][0]
             self.y = args[0][1]

@@ -16,8 +16,8 @@ class GameObject:
             self.transform = self._rect = self.get_component("SpriteRenderer").sprite.sprite.get_rect()
         for component in self.components:
             component.update(self.game_manager.screen)
-        self.update(self)
-        self.late_update(self)
+        self.update()
+        self.late_update()
 
     def add_component(self, component):
         if not isinstance(component, BaseComponent):

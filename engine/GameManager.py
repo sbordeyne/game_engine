@@ -18,7 +18,7 @@ class GameManager:
 
     def start(self):
         for go in self.game_objects:
-            go.awake(go)
+            go.awake()
         self.loop()
 
     def loop(self):
