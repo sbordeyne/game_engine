@@ -25,7 +25,7 @@ class GameManager:
         while not self.done:
             if self.input.get_quit():
                 self.done = False
-            # self.physics_engine.iterate(self)
+            self.physics_engine.iterate()
             self.renderer.render()
             for go in self.game_objects:
                 go.call_updates()
